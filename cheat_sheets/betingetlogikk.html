@@ -6,14 +6,13 @@
     <title>Cheat Sheet for Betinget logikk</title>
 </head>
 <body>
-        
-
+        <p id="loginStatus">Ikke logget inn</p>
 
     <script>
         const username = "jacob"
         const password = "passord123"
         let loggedIn = false
-            if(leggedIn = false))
+            if(leggedIn = false)
             console.log("Ikke logget inn")
 
 
@@ -29,6 +28,14 @@
             loggedIn = true
             console.log(loggedIn)
        }
+
+
+         //Må være nederest av IF-testene for å funke.
+         //IF-test som sjekker om bruker er logget inn, og oppdater grensesnitt hvis den er:
+            if(loggedIn) {
+                document.getElementById("loginStatus").innerHTML = "Hei, Jacob! Du er logget inn."
+            }
+
 
     </script>
 </body>
