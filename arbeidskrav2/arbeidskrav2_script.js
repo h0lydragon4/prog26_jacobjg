@@ -42,3 +42,9 @@ for (const student of students) {
 const gjennomsnitt = sum / antall;
 document.getElementById("averageGrade").innerHTML = gjennomsnitt;
 
+/* Har brukt KI for å finne ut koden over 
+Bruker ny prompt fra foreleser for arbeidet under*/
+
+if(student.grade === 6) {
+    
+}
