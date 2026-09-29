@@ -35,32 +35,31 @@ const grades = [
 
 
 /* Finne antall studenter = antall */
-    let antall = students.length;
-    document.getElementById("studentCount").innerHTML = antall;
-    console.log(studentCount);
+    let antall = students.length
+    document.getElementById("studentCount").innerHTML = antall
 
 
 /* KARAKTERFORDELING */
 
 
 /* Finne sum av alle karakterer = sumbGrade */
-    let sumGrade = 0;
+    let sumGrade = 0
     for (const student of students) {
-        sumGrade = sumGrade + Number(student.grade);
+        sumGrade = sumGrade + Number(student.grade)
     }
 /* Klarte ikke å finne ut hvordan man lagde sum. Fikk hjelp fra en medstudent om hva jeg burde bruke "Number()". */
 
 
 /* Finne gjennomsnitt av karakterer = gsGrade */
-    const gsGrade = sumGrade / antall;
-    const GS = Math.ceil(gsGrade);
+    const gsGrade = sumGrade / antall
+    const GS = Math.ceil(gsGrade)
 /* Fikk "Math.ceil()" fra medstudent. Klarte å finne fram til den samme på w3schools selv */
 
 
 /* Brukte ny prompt for koden under */
 
 /* Gjøre averageGrade ID om til C */
-    document.getElementById("averageGrade").innerHTML = "C";
+    document.getElementById("averageGrade").innerHTML = "C"
 
 
 /* Teller hvor mange A-F karakterer det er blandt studentene */
@@ -92,7 +91,7 @@ const grades = [
                 document.getElementById("gradeD").innerHTML = antallD.length
         })
 
-        /* Prøver forslaget til KI og fjerner .map. Gir samme resultat */
+        /* Prøver forslaget til KI og fjerner .map. Resultat: gir samme resultat */
                 /* Karakter E */
                 let antallEHTML = ""
                     const antallE = students.filter(studentE => studentE.grade === "2")
@@ -115,15 +114,23 @@ const grades = [
 
 /* Finne gjennomsnitt alder = gsAlder */
     const gsAlder = sumAlder / antall;
-    document.getElementById("averageAge").innerHTML = gsAlder
+        document.getElementById("averageAge").innerHTML = gsAlder
 
 
 /* Finne antall rett fra videregående */
-    
+    let hsAntallHTML = ""
+        const antallHS = students.filter(studentHS => studentHS.age === 19)
+            document.getElementById("highSchool").innerHTML = antallHS.length
+console.log(highSchool)
 
-
+/* Finne antall med yrkeserfaring */
+    let erfaringAntallHTML = ""
+    const erfaringAntall = students.filter(erfaringStudent => erfaringStudent.workexperience > 0)
+        document.getElementById("workExperience").innerHTML = erfaringAntall.length
+        console.log(workExperience)
 
 /*
+Jeg skulle ha vært mer spesifikk, God hjelp med forslaget ditt om Math.ceil, men med tanke på Number(), så har jeg ikke lov til å forandre original javascripten (det som fulgte med oppgaven). Er det en måte å gjøre det på uten å røre original koden? Eller er jeg nødt til å bruke Number()?
 KI-logg
     Gamle chat:
     https://gemini.google.com/share/d/1bHYxWLJ70FBmxOuHf1fYf7yUyHnOWMAH?usp=sharing
