@@ -30,77 +30,104 @@ const grades = [
     { letter: "F", score: 1}
 ]
 
-/* Finne antall studenter = antall */
-let antall = students.length;
-document.getElementById("studentCount").innerHTML = antall;
-console.log(studentCount);
 
+/* DASHBOARD */
+
+
+/* Finne antall studenter = antall */
+    let antall = students.length;
+    document.getElementById("studentCount").innerHTML = antall;
+    console.log(studentCount);
+
+
+/* KARAKTERFORDELING */
 
 
 /* Finne sum av alle karakterer = sumbGrade */
-let sumGrade = 0;
-for (const student of students) {
-    sumGrade = sumGrade + Number(student.grade);
-}
+    let sumGrade = 0;
+    for (const student of students) {
+        sumGrade = sumGrade + Number(student.grade);
+    }
 /* Klarte ikke å finne ut hvordan man lagde sum. Fikk hjelp fra en medstudent om hva jeg burde bruke "Number()". */
 
 
 /* Finne gjennomsnitt av karakterer = gsGrade */
-const gsGrade = sumGrade / antall;
-const GS = Math.ceil(gsGrade);
+    const gsGrade = sumGrade / antall;
+    const GS = Math.ceil(gsGrade);
 /* Fikk "Math.ceil()" fra medstudent. Klarte å finne fram til den samme på w3schools selv */
 
 
 /* Brukte ny prompt for koden under */
 
 /* Gjøre averageGrade ID om til C */
-document.getElementById("averageGrade").innerHTML = "C";
+    document.getElementById("averageGrade").innerHTML = "C";
 
 
+/* Teller hvor mange A-F karakterer det er blandt studentene */
+    let antallAHTML = ""
+        const antallA = students.filter(studentA => studentA.grade === "6")
+        antallA.map(students => {antallAHTML =
+            document.getElementById("gradeA").innerHTML = antallA.length
+    })
+/* KI fortalte meg at jeg egentlig ikke trengte .map, at det var litt "redundant", men siden jeg ikke kom fram til det på egenhånd så lar jeg det stå. Koden funker fint uansett.  */
 
-let antallAHTML = ""
-    const antallA = students.filter(a => students.grade === 6)
-    antallA.map(a => {antallAHTML =
-        document.getElementById("gradeA").innerHTML = antallA.length
-})
+        /* Karakter B */
+        let antallBHTML = ""
+            const antallB = students.filter(studentB => studentB.grade === "5")
+            antallB.map(students => {antallBHTML =
+                document.getElementById("gradeB").innerHTML = antallB.length
+        })
 
-console.log(antallA)
-console.log(antallAHTML)
+        /* Karakter C */
+        let antallCHTML = ""
+            const antallC = students.filter(studentC => studentC.grade === "4")
+            antallC.map(students => {antallCHTML =
+                document.getElementById("gradeC").innerHTML = antallC.length
+        })
 
+        /* Karakter D */
+        let antallDHTML = ""
+            const antallD = students.filter(studentD => studentD.grade === "3")
+            antallD.map(students => {antallDHTML =
+                document.getElementById("gradeD").innerHTML = antallD.length
+        })
 
+        /* Prøver forslaget til KI og fjerner .map. Gir samme resultat */
+                /* Karakter E */
+                let antallEHTML = ""
+                    const antallE = students.filter(studentE => studentE.grade === "2")
+                        document.getElementById("gradeE").innerHTML = antallE.length
+
+                /* Karakter F */
+                let antallFHTML = ""
+                    const antallF = students.filter(studentF => studentF.grade === "1")
+                        document.getElementById("gradeF").innerHTML = antallF.length
+        
+
+/* DEMOGRAFI */
 
 
 /* Finne sum av all alder = sumAlder */
-let sumAlder = 0;
-for (const student of students) {
-    sumAlder = sumAlder + Number(student.age);
-}
-/* Finne gjennomsnitt alder = gsAlder
-Skrev ut til HTML med document.getElementById("") */
-const gsAlder = sumAlder / antall;
-document.getElementById("averageAge").innerHTML = gsAlder
+    let sumAlder = 0;
+    for (const student of students) {
+        sumAlder = sumAlder + Number(student.age);
+    }
+
+/* Finne gjennomsnitt alder = gsAlder */
+    const gsAlder = sumAlder / antall;
+    document.getElementById("averageAge").innerHTML = gsAlder
 
 
-
-
+/* Finne antall rett fra videregående */
+    
 
 
 
 /*
-
-students.map(grade => {document.getElementById("gradeA").innerHTML = "students.grade"
-} ) 
-
-
-students.map(karakter => {document.getElementById("gradeA").innerHTML = karakter} )
-
-
 KI-logg
     Gamle chat:
     https://gemini.google.com/share/d/1bHYxWLJ70FBmxOuHf1fYf7yUyHnOWMAH?usp=sharing
 
     Ny chat:
     https://gemini.google.com/share/d/1gmhwK4_I2SV4VT8mkFYmNEweXKiIK1U-?usp=sharing
-
-Brukte for ...
 */
