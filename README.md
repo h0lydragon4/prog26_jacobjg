@@ -1,2 +1,0 @@
-# prog26_jacobjg
-

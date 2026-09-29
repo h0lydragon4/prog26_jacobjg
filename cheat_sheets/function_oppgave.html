@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, oppgave 1</title>
+</head>
+<body>
+    
+    <script>
+        const people = ["Marius", "Tore", "Susanne", "Monica", "Arne", "Zoltan", "Beate"]
+
+        function sortArray(array) {
+            //Sortere arrayen alfabetisk
+            array.sort()
+            //Lage en ny p-tag
+            const ptag = document.createElement("p")
+            //Fyll ptag med array, kommeseparert
+            ptag.innerHTML = array.join(", ")
+            //Skrive ut ptag til nettside
+            document.body.appendChild(ptag)
+
+            //Testutskrift
+            console.log(ptag)
+        }
+        
+        sortArray(people)
+
+
+
+
+
+
+
+
+/*
+        Mitt forsøk ->
+
+        function sortPeopleName(ptag = "p") {
+
+        }
+*/
+    </script>
+</body>
+</html>
