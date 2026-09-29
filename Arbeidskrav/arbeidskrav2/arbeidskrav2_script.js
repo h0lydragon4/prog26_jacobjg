@@ -59,10 +59,11 @@ document.getElementById("averageGrade").innerHTML = "C";
 
 
 let antallAHTML = ""
-    const antallA = students.filter(studentA => students.grade === 6)
-    antallA.map(studentA => {antallAHTML =
+    const antallA = students.filter(a => students.grade === 6)
+    antallA.map(a => {antallAHTML =
         document.getElementById("gradeA").innerHTML = antallA.length
 })
+
 console.log(antallA)
 console.log(antallAHTML)
 
