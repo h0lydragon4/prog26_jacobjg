@@ -56,7 +56,9 @@ const grades = [
 /* Fikk "Math.ceil()" fra medstudent. Klarte å finne fram til den samme på w3schools selv */
 
 
-/* Brukte ny prompt for koden under */
+//Sjekk Number()
+
+
 
 /* Gjøre averageGrade ID om til C */
     document.getElementById("averageGrade").innerHTML = "C"
