@@ -53,7 +53,9 @@ const grades = [
 /* Finne gjennomsnitt av karakterer = gsGrade */
     const gsGrade = sumGrade / antall
     const GS = Math.ceil(gsGrade)
-/* Fikk "Math.ceil()" fra medstudent. Klarte å finne fram til den samme på w3schools selv */
+/* Fikk "Math.ceil()" fra medstudent. Klarte å finne fram til den samme på w3schools selv 
+Bruker .ceil for å runde opp. I motsettning til .round eller .floor
+*/
 
 
 //Sjekk Number()
@@ -114,9 +116,12 @@ const grades = [
         sumAlder = sumAlder + Number(student.age);
     }
 
-/* Finne gjennomsnitt alder = gsAlder */
+/* Finne gjennomsnitt alder = gsAlder
+    Gir gsAlder 2 desimaltall */
     const gsAlder = sumAlder / antall;
-        document.getElementById("averageAge").innerHTML = gsAlder
+    
+    let gsAlderD = gsAlder.toFixed(2)
+        document.getElementById("averageAge").innerHTML = gsAlderD
 
 
 /* Finne antall rett fra videregående */
@@ -132,11 +137,12 @@ console.log(highSchool)
         console.log(workExperience)
 
 /*
-Jeg skulle ha vært mer spesifikk, God hjelp med forslaget ditt om Math.ceil, men med tanke på Number(), så har jeg ikke lov til å forandre original javascripten (det som fulgte med oppgaven). Er det en måte å gjøre det på uten å røre original koden? Eller er jeg nødt til å bruke Number()?
 KI-logg
-    Gamle chat:
-    https://gemini.google.com/share/d/1bHYxWLJ70FBmxOuHf1fYf7yUyHnOWMAH?usp=sharing
-
-    Ny chat:
     https://gemini.google.com/share/d/1gmhwK4_I2SV4VT8mkFYmNEweXKiIK1U-?usp=sharing
+
+    Jeg fikk hjelp fra KI til:
+        Hvordan gjøre tekststreng til tall: Number ()
+        Hvordan runde opp eller ned tall: Math. -ceil, -round, -floor
+        Hvordan gi tall bestemte desimalltall: .toFixed()
+            Antall desimaltall skrives i parantes
 */
