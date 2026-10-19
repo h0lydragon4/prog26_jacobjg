@@ -53,17 +53,59 @@ const grades = [
 /* Finne gjennomsnitt av karakterer = gsGrade */
     const gsGrade = sumGrade / antall
     const GS = Math.ceil(gsGrade)
+    console.log(GS)
 /* Fikk "Math.ceil()" fra medstudent. Klarte å finne fram til den samme på w3schools selv 
 Bruker .ceil for å runde opp. I motsettning til .round eller .floor
 */
 
 
-//Sjekk Number()
+// 2 METODER FOR FORANDRING AV GJENNOMSNITT, TALL TIL BOKSTAV (if-test, .filter, .find). 
 
+//Ved bruk av if-test
+/*
+if (GS === 6) {
+    document.getElementById("averageGrade").innerHTML = "A"
+}else
 
+if (GS === 5) {
+    document.getElementById("averageGrade").innerHTML = "B"
+}else
 
-/* Gjøre averageGrade ID om til C */
+if (GS === 4) {
     document.getElementById("averageGrade").innerHTML = "C"
+}else
+
+if (GS === 3) {
+    document.getElementById("averageGrade").innerHTML = "D"
+}else
+
+if (GS === 2) {
+    document.getElementById("averageGrade").innerHTML = "E"
+}else
+
+if (GS === 1) {
+    document.getElementById("averageGrade").innerHTML = "F"
+}   else {
+     console.log(GS)
+}
+*/
+
+//Ved bruk av grades arrayen
+// .find
+const gradeTrans = grades.find(grade => grade.score === GS)
+document.getElementById("averageGrade").innerHTML = gradeTrans.letter
+console.log(gradeTrans.letter)
+
+//.filter
+// const gradeTrans = grades.filter(grade => grade.score === GS)
+// document.getElementById("averageGrade").innerHTML = gradeTrans[0].letter
+// console.log(gradeTrans[0].letter)
+
+
+// Gamel ikke godkjent kode
+ /* Gjøre averageGrade ID om til C */
+//     document.getElementById("averageGrade").innerHTML = "C"
+
 
 
 /* Teller hvor mange A-F karakterer det er blandt studentene */
@@ -74,37 +116,37 @@ Bruker .ceil for å runde opp. I motsettning til .round eller .floor
     })
 /* KI fortalte meg at jeg egentlig ikke trengte .map, at det var litt "redundant", men siden jeg ikke kom fram til det på egenhånd så lar jeg det stå. Koden funker fint uansett.  */
 
-        /* Karakter B */
-        let antallBHTML = ""
-            const antallB = students.filter(studentB => studentB.grade === "5")
-            antallB.map(students => {antallBHTML =
-                document.getElementById("gradeB").innerHTML = antallB.length
-        })
+    /* Karakter B */
+    let antallBHTML = ""
+        const antallB = students.filter(studentB => studentB.grade === "5")
+        antallB.map(students => {antallBHTML =
+            document.getElementById("gradeB").innerHTML = antallB.length
+    })
 
-        /* Karakter C */
-        let antallCHTML = ""
-            const antallC = students.filter(studentC => studentC.grade === "4")
-            antallC.map(students => {antallCHTML =
-                document.getElementById("gradeC").innerHTML = antallC.length
-        })
+    /* Karakter C */
+    let antallCHTML = ""
+        const antallC = students.filter(studentC => studentC.grade === "4")
+        antallC.map(students => {antallCHTML =
+            document.getElementById("gradeC").innerHTML = antallC.length
+    })
 
-        /* Karakter D */
-        let antallDHTML = ""
-            const antallD = students.filter(studentD => studentD.grade === "3")
-            antallD.map(students => {antallDHTML =
-                document.getElementById("gradeD").innerHTML = antallD.length
-        })
+    /* Karakter D */
+    let antallDHTML = ""
+        const antallD = students.filter(studentD => studentD.grade === "3")
+        antallD.map(students => {antallDHTML =
+            document.getElementById("gradeD").innerHTML = antallD.length
+    })
 
-        /* Prøver forslaget til KI og fjerner .map. Resultat: gir samme resultat */
-                /* Karakter E */
-                let antallEHTML = ""
-                    const antallE = students.filter(studentE => studentE.grade === "2")
-                        document.getElementById("gradeE").innerHTML = antallE.length
+    /* Prøver forslaget til KI og fjerner .map. Resultat: gir samme resultat */
+            /* Karakter E */
+            let antallEHTML = ""
+                const antallE = students.filter(studentE => studentE.grade === "2")
+                    document.getElementById("gradeE").innerHTML = antallE.length
 
-                /* Karakter F */
-                let antallFHTML = ""
-                    const antallF = students.filter(studentF => studentF.grade === "1")
-                        document.getElementById("gradeF").innerHTML = antallF.length
+            /* Karakter F */
+            let antallFHTML = ""
+                const antallF = students.filter(studentF => studentF.grade === "1")
+                    document.getElementById("gradeF").innerHTML = antallF.length
         
 
 /* DEMOGRAFI */
@@ -145,4 +187,18 @@ KI-logg
         Hvordan runde opp eller ned tall: Math. -ceil, -round, -floor
         Hvordan gi tall bestemte desimalltall: .toFixed()
             Antall desimaltall skrives i parantes
+
+
+NY KI-LOGG for nytt forsøk
+    https://gemini.google.com/share/d/16P5G12X7z-uLP3JknM6BAVb4hJDPlmex?usp=sharing
+
+    Jeg fikk hjelp fra KI til:
+        Hvordan bruke .filter / .find
+        Oppklaring og oversikt over if-tester
+       
+        Generell kunnskap om koding
+        Oversikt over kode begreper
+
+Jeg brukte Gemini som en sparringspartner, jeg snakket og spurte spørsmål jeg var nygjerrig om.
+Ønsket var å prøve å finne ut av ting uten å bare se over hva jeg hadde gjort i "Cheat Sheets" og kopiere
 */
