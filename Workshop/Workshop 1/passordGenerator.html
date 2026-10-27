@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passordgenerator</title>
+</head>
+<body>
+    <main>
+        <h2>Passordgenerator</h2>
+        <p>
+            <label for="lengde">Hvor langt skal passordet være?</label>
+            <input type="number" id="lengde" name="lengde" value="8"/>
+        </p>
+        <button id="create">Generer passord</button>
+        <p id="print"></p>
+    </main>
+    
+    <script>
+        //REGLER OG KONFIGURASJONER
+        let passord = ""
+        const lowerCase = "abcdefghijklmnopqrstuvwxyzæøå"
+        const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ"
+        const numbers = "1234567890"
+        const specialChars = "!#¤%&/()= "
+        
+        const tillatteTegn = ""
+
+         document.getElementById("create").addEventListener("click", function (event) {
+            //Tømme passord-variabel for å gjøre klar til nytt passord:
+            passord=""
+
+            //Hente ut hvor langt passordet skal være:
+            const passordLengde = document.getElementById("lengde").value
+            
+            //GENERER PASSORD
+            for(teller = 0; teller < lengde.value; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * tillatteTegn.length)
+                console.log(tilfeldigTegn, tillatteTegn[tilfeldigTegn])
+                passord += tillatteTegn[tilfeldigTegn]
+            }
+            
+            document.getElementById("print").innerHTML = passord
+
+        })
+        
+        
+        
+
+    </script>
+</body>
+</html>
+
+
