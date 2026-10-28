@@ -12,6 +12,14 @@
             <label for="lengde">Hvor langt skal passordet være?</label>
             <input type="number" id="lengde" name="lengde" value="8"/>
         </p>
+        <p>Spesifikasjoner:</p>
+        <button onclick="checkAll()">Velg alle</button>
+        <ul>
+            <li><label><input type="checkbox" id="lowerCase" checked /> Små bokstaver</label></li>
+            <li><label><input type="checkbox" id="upperCase" /> Store bokstaver</label></li>
+            <li><label><input type="checkbox" id="numbers" checked /> Tall</label></li>
+            <li><label><input type="checkbox" id="specialChars" /> Spesialtegn</label></li>
+        </ul>
         <button id="create">Generer passord</button>
         <p id="print"></p>
     </main>
@@ -24,9 +32,33 @@
         const numbers = "1234567890"
         const specialChars = "!#¤%&/()= "
         
-        const tillatteTegn = ""
+        let tillatteTegn = ""
+
+        
+        function checkAll() {
+            document.getElementById("lowerCase").checked = true
+            document.getElementById("upperCase").checked = true
+            document.getElementById("numbers").checked = true
+            document.getElementById("specialChars").checked = true
+        }
+        
 
          document.getElementById("create").addEventListener("click", function (event) {
+            //Tømme tillatteTegn for nytt utvalg:
+            tillatteTegn = ""
+            //Sjekke hvilke kategorier som er valgt, og gjøre disse klare for utvalget:
+            if (document.getElementById("lowerCase").checked === true) {
+                tillatteTegn += lowerCase
+            }
+            //Vi tester på samme måte, men med syntaxen til en ternary operator:
+            document.getElementById("upperCase").checked ? tillatteTegn += upperCase : null
+            document.getElementById("numbers").checked ? tillatteTegn += numbers : null
+            document.getElementById("specialChars").checked ? tillatteTegn += specialChars : null
+
+
+            console.log(tillatteTegn)
+            //Finne verdi for checkbox: document.getElementById("ID").checked
+
             //Tømme passord-variabel for å gjøre klar til nytt passord:
             passord=""
 
@@ -46,6 +78,11 @@
         
         
         
+
+
+
+        //TEST UTSKRIFT AV CHECKBOX
+        //    console.log("Verdi av checkbox lowerCase: ", document.getElementById("lowerCase").checked)
 
     </script>
 </body>
